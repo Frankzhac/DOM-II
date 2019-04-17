@@ -1,7 +1,20 @@
-// Your code goes here
-const homeBod = document.querySelector(".main-navigation");
-homeBod.addEventListener("keyup", event => {
+// // Your code goes here
+const homeNav = document.querySelector(".main-navigation");
+homeNav.addEventListener("mouseover", event => {
   // console.log("Adventure Time!");
+});
+
+//resize window
+
+// window.addEventListener("resize", myIntro);
+// let x = 0;
+// function myIntro() {
+//   let txt = x += 1;
+//   document.getElementById("test").innerHTML = txt;
+// }
+const ctn = document.querySelector(".container home");
+ctn.addEventListener("resize", event => {
+  console.log("Window resized!");
 });
 
 //dblclick
@@ -12,15 +25,23 @@ inTro.addEventListener("dblclick", (event) => {
   event.stopPropagation();
 });
 
-// const introImg = document.getElementById("middle-img");
-//   middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
-const letsGoImg = document.getElementById('.img-content');
-letsGoImg.addEventListener("focusin", (evt) => {
-  evt.target.style.background = '#eaf5ff';
+
+//error
+
+const introImgError = document.querySelector(".intro");
+imgError.addEventListener('click', () => {
+    badImg.setAttribute('src', 'i-dont-exist');
+});
+
+//focusin and focusout/blur
+
+const letsGoImg = document.querySelector('.img-content');
+letsGoImg.addEventListener("focusin", (event) => {
+  event.target.style.background = '#eaf5ff';
   console.log("Blue Bussss!");
 });
 
-letsGoImg.addEventListener("blur", (event) => {
+letsGoImg.addEventListener("blur", event => {
   event.target.style.background = '';
   console.log("I can't see!");
 });
@@ -28,7 +49,34 @@ letsGoImg.addEventListener("blur", (event) => {
 //load
 
 const signUpBtn = document.querySelector(".btn");
-signUpBtn.addEventListener("load", (evt) => {
+signUpBtn.addEventListener("load", event => {
   console.log("Sign up loading!");
   event.preventDefault();
 });
+
+//scroll
+
+const nav = document.querySelectorAll(".nav");
+nav.addEventListener("scroll", event => {
+  console.log("you scrolled in nav!");
+});
+
+//mouse down
+
+const bye = document.querySelector(".text-content");
+bye.addEventListener("mousedown", (event) => {
+  event.target.style.display = "none";
+  event.stopPropagation();
+});
+
+// unload
+
+const selection = document.querySelector(".footer");
+selection.addEventListener("select", event => {
+  console.log("You selected");
+});
+
+/* I would like you to over my code and check
+if it's correct. My compiler stopped tracking
+my changes last night and I only realized it
+this morning. */
